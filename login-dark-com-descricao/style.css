@@ -1,0 +1,155 @@
+/*importação fontes do google*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif; /*chamando a fonte Noto Sans*/
+    background: #201b2c;
+}
+
+body * {
+    box-sizing: border-box; /*evita que o elemento filho ultrapasse o elemento pai*/
+}
+
+main{
+    width: 100vw; /*ocupe 100% (vw) da largura tela*/
+    height: 100vh; /*ocupe 100% (vw) da altura tela*/
+    display: flex; /*ordenar blocos em linha (lado a lado)*/
+    justify-content: center; /*organizar os elementos no centro no eixo x */
+    align-items: center; /*organizar os elementos no centro no eixo y */
+}
+
+.left-login{
+    width: 50vw; /*ocupe 50% da tela*/
+    height: 100vh; /*ocupe altura (100%) inteira da tela*/
+    display: flex; /*ordenar blocos em linha (lado a lado)*/
+    justify-content: center; /*organizar os elementos no centro no eixo x */
+    align-items: center; /*organizar os elementos no centro no eixo y */
+    flex-direction: column; /*colocar os blocos em coluna*/
+}
+
+.left-login > h1{
+    font-size: 3vw;
+    color: #77ffc0;
+}
+
+.left-login-image{
+    width: 35vw;
+}
+
+
+.right-login{
+    width: 50vw; /*ocupe 50% da tela*/
+    height: 100vh; /*ocupe altura (100%) inteira da tela*/
+    display: flex; /*ordenar blocos em linha (lado a lado)*/
+    justify-content: center; /*organizar os elementos no centro no eixo x */
+    align-items: center; /*organizar os elementos no centro no eixo y */
+}
+
+.card-login{
+    width: 60%; /*usando % a referência é o tamanho da div - ocupe 60% da div*/
+    display: flex; /*ordenar blocos em linha (lado a lado)*/
+    justify-content: center; /*organizar os elementos no centro no eixo x */
+    align-items: center; /*organizar os elementos no centro no eixo y */
+    flex-direction: column; /*colocar os blocos em coluna*/
+    padding: 30px 35px; /*são margins internas do elemento*/
+    background: #2f2841;
+    border-radius: 10px; /*cantos arredondados*/
+    box-shadow: 0px 10px 40px #00000056;; /*sombras nas bordas*/
+    /*1º valor --> direita e esquerda, 2º valor topo e buttom (positivo vai para baixo negativo para cima)
+    3º valor bordar e 4º valor a cor*/
+}
+
+.card-login > h1{
+    color: #00ff88;
+    font-weight: 800; /*peso da fonte (grossura)*/
+    margin: 0;
+}
+
+.textfield{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /*nos exemplos anteriores justify-content representa o eixo x
+                              align-items representa o eixo y
+    mas quando se usa flex-direction eles se invertem*/
+    align-items: flex-start; /*os lebels mais a esquerda*/
+    justify-content: center;
+    margin: 10px 0px; /*espaçamento os elemntos no eixo y*/
+}
+
+
+.textfield > input{
+    width: 100%;
+    border: none;
+    border-radius: 10px; /*arredundar os cantos dos elementos*/
+    padding: 15px;
+    background: #514869;
+    color: #f0ffffde;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none; /*retirar a seleção do input (caixa)*/
+    box-sizing: border-box; /*evita que o elemento filho ultrapasse o elemento pai*/
+}
+
+.textfield > label{
+    color: #f0ffffde;
+    margin-bottom: 10px; /*espaçamento entre label e o input*/
+}
+
+.textfield > input::placeholder{
+    color: #f0ffff94;
+}
+
+.btn-login{
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none; /*retirar a seleção do input (caixa)*/
+    text-transform: uppercase; /*letras maiúculas*/
+    font-weight: 800;
+    letter-spacing: 3px; /*espaço entre as letras*/
+    color: #2b134b;
+    background: #00ff88;
+    cursor: pointer; /*colocar ponteiro no botão*/
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+}
+
+/*enquanto a tela for de 950px adicione os seguintes elementos*/
+@media only screen and (max-width: 950px){
+    .card-login{
+        width: 85%; 
+    }
+}
+
+/*enquanto a tela for de 600px adicione os seguintes elementos*/
+@media only screen and (max-width: 600px) {
+    main{
+        flex-direction: column; /*colocar em colunas*/
+    }
+
+    .left-login > h1 {
+        display: none; /*retirar algumas informações*/
+    }
+
+    .left-login{
+        width: 100px; /*ocupar quase toda a div*/
+        height: auto;
+    }
+
+    .right-login{
+        width: 100%;/*ocupar quase toda a div*/
+        height: auto;
+    }
+
+    .left-login-image{
+        width: 50vw; /*aumentar o tamanho da image*/
+    }
+
+    .card-login{
+        width: 90%; /*para que o card não ocupe toda tela
+                    é para funcionar configure o body * {} */
+    }
+}
